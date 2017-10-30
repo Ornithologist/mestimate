@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/mman.h>
 #include <time.h>
 #include <unistd.h>
 
@@ -45,12 +44,11 @@ int time_memset(void)
 {
     clock_t start = clock(), diff;
 
-    void *mmapped;
-    if ((mmapped = mmap(NULL, NUM_PAGES * page_size, PROT_READ | PROT_WRITE,
-                        MAP_PRIVATE | MAP_ANONYMOUS, -1, 0)) == MAP_FAILED) {
+    void *allocated;
+    if ((allocated = malloc(NUM_PAGES * page_size)) == NULL) {
         return 0;
     }
-    memset(mmapped, 0, NUM_PAGES * page_size);
+    memset(allocated, 0, NUM_PAGES * page_size);
 
     diff = clock() - start;
     return diff;
