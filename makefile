@@ -17,7 +17,7 @@ gdb: estimate
 %.o: %.c
 	$(CC) $(CFLAGS) $< -c -o $@
 
-check:	estimate
+check:	clean estimate
 	./estimate
 
 dist:
