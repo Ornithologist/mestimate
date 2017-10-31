@@ -33,7 +33,7 @@ int main(int argc, char **argv)
     }
 
     unsigned long long ram_size = (count - TRIGGER_BUFFER) * page_size * NUM_PAGES;
-    printf("Memory size is approximately %llu bytes\n", ram_size);
+    printf("Memory size is approximately %llu MB\n", ram_size / 1000000);
 
     return 0;
 }
