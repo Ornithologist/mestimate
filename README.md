@@ -18,3 +18,6 @@ The program keeps counting its trashing guesses and tries to confirm its guess b
 The final estimation is calculated by multiplying the number of non-trashing iterations with (20 * PAGE_SIZE).
 
 The program has been tested on ubuntu precise 64 distribution and MacOS High Sierra.
+
+## Known Issues and Limitations
+1. The *TRIGGER_BUFFER* affects the the accuracy of the estimation. When it is too large, the program tends to overestimate the memory space. When too small, the program tends to underestimate the memory space. The final value 100 was chosen to gain a balance between testing results on ubuntu and MacOS systems, where on both systems the program can make estimations around 4MB close to the real free memory space.
