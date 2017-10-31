@@ -1,5 +1,5 @@
 # mestimate
-mestimate is a simple executable that makes reasonable guesses about a computer's memory
+mestimate is a simple C program that makes reasonable guess about a computer's memory
 
 ## Build & Run
 To build, run `make check` or simply `make all`.
@@ -7,7 +7,7 @@ To build, run `make check` or simply `make all`.
 To clean up the previous build, run `make clean`
 
 ## Estimation Strategy
-This program makes use of standard c library function _malloc()_ and _memset()_ to manipulate memory.
+This program makes use of standard C library function _malloc()_ and _memset()_ to manipulate memory.
 
 The program makes request for memory of size 20 * PAGE_SIZE. After successful allocation, it will immediately call _memset()_ to fill integer 0 into each byte in the requested space. It will then repeat the above 2 steps in an endless loop.
 
