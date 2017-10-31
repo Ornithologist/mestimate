@@ -6,7 +6,7 @@
 #define NUM_PAGES 20
 #define PAGE_SIZE 4096
 #define TRIGGER_RATIO 2
-#define TRIGGER_BUFFER 20
+#define TRIGGER_BUFFER 100
 
 int triggered = 0;
 int page_size = 0;
@@ -34,8 +34,6 @@ int main(int argc, char **argv)
 
     unsigned long long ram_size = (count - TRIGGER_BUFFER) * page_size * NUM_PAGES;
     printf("Memory size is approximately %llu bytes\n", ram_size);
-    printf("Expected set time is %d ms, actual set time is %d ms, count is %llu\n",
-           expected_cpu_ms, cur_cpu_ms, count);
 
     return 0;
 }
